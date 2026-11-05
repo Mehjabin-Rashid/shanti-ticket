@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #5bc83a;
+  --color-brand-dark: #4cb82c;
+  --font-raleway: "Raleway", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* 1040px content width from the 1280px design frame */
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 65rem;
+  padding-inline: 1rem;
+  @media (width >= 64rem) {
+    padding-inline: 0;
+  }
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* 1rem = 16px at 1280px wide, scales with the screen so the layout matches the design at any desktop size */
+@media (min-width: 64rem) {
+  html { font-size: clamp(12px, 1.25vw, 28px); }
+}
